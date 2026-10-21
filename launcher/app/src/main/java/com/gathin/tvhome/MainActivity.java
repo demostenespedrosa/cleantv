@@ -890,6 +890,15 @@ public class MainActivity extends Activity implements AppAdapter.TileListener {
     @Override
     public boolean dispatchKeyEvent(KeyEvent event) {
         if (handleSettingsKey(event)) return true;
+        int eventKeyCode = event.getKeyCode();
+        if (eventKeyCode == KeyEvent.KEYCODE_MENU || eventKeyCode == KeyEvent.KEYCODE_TV_CONTENTS_MENU) {
+            if (event.getAction() == KeyEvent.ACTION_UP && !event.isCanceled()) {
+                Intent open = new Intent(this, SidebarActivity.class);
+                open.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_SINGLE_TOP);
+                startActivity(open);
+            }
+            return true;
+        }
         if (!reordering) return super.dispatchKeyEvent(event);
         if (dockEditing) return dispatchDockEdit(event);
         boolean down = event.getAction() == KeyEvent.ACTION_DOWN;

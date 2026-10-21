@@ -110,4 +110,6 @@
     <string name="tile_move">Move app</string>
     <string name="tile_pin_dock">Pin to Dock</string>
     <string name="tile_unpin_dock">Remove from Dock</string>
+    <string name="sidebar_title">Apps</string>
+    <string name="sidebar_home_action">Home Screen</string>
 </resources>

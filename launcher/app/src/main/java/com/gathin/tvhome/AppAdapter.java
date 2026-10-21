@@ -690,12 +690,7 @@ public class AppAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
             card.setOnKeyListener((view, keyCode, event) -> {
                 if (event.getAction() != KeyEvent.ACTION_DOWN) return false;
                 if (keyCode == KeyEvent.KEYCODE_MENU) {
-                    int pos = getBindingAdapterPosition();
-                    if (listener != null && pos != RecyclerView.NO_POSITION) {
-                        listener.onTileLongPressed(pos, view);
-                        return true;
-                    }
-                    return false;
+                    return false; // let MENU bubble up to open the Sidebar
                 }
                 if (keyCode != KeyEvent.KEYCODE_DPAD_UP && keyCode != KeyEvent.KEYCODE_DPAD_DOWN
                         && keyCode != KeyEvent.KEYCODE_DPAD_LEFT && keyCode != KeyEvent.KEYCODE_DPAD_RIGHT) return false;

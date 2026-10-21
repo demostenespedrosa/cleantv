@@ -106,4 +106,6 @@
     <string name="tile_move">Mover aplicativo</string>
     <string name="tile_pin_dock">Fixar na Dock</string>
     <string name="tile_unpin_dock">Remover da Dock</string>
+    <string name="sidebar_title">Aplicativos</string>
+    <string name="sidebar_home_action">Tela Inicial</string>
 </resources>

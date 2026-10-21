@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="52dp"
+    android:layout_marginTop="3dp"
+    android:layout_marginBottom="3dp"
+    android:background="@drawable/sidebar_item_selector"
+    android:clickable="true"
+    android:focusable="true"
+    android:gravity="center_vertical"
+    android:paddingStart="12dp"
+    android:paddingEnd="12dp">
+
+    <ImageView
+        android:id="@+id/sidebar_item_icon"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:scaleType="fitCenter" />
+
+    <TextView
+        android:id="@+id/sidebar_item_label"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="14dp"
+        android:layout_weight="1"
+        android:ellipsize="end"
+        android:fontFamily="@font/outfit_medium"
+        android:maxLines="1"
+        android:textColor="#FFFFFF"
+        android:textSize="14sp" />
+
+</LinearLayout>

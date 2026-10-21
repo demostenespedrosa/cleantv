@@ -106,4 +106,6 @@
     <string name="tile_move">הזזת אפליקציה</string>
     <string name="tile_pin_dock">הצמדה לשורת המועדפים</string>
     <string name="tile_unpin_dock">הסרה משורת המועדפים</string>
+    <string name="sidebar_title">אפליקציות</string>
+    <string name="sidebar_home_action">מסך הבית</string>
 </resources>

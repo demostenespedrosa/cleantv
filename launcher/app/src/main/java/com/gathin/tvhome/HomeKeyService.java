@@ -47,8 +47,25 @@ public class HomeKeyService extends AccessibilityService {
         return false;
     }
 
+    private boolean isMenuKey(KeyEvent event) {
+        int code = event.getKeyCode();
+        return code == KeyEvent.KEYCODE_MENU
+                || code == KeyEvent.KEYCODE_TV_CONTENTS_MENU
+                || code == 82
+                || code == 256;
+    }
+
     @Override
     protected boolean onKeyEvent(KeyEvent event) {
+        // Menu button (three horizontal lines): opens quick app sidebar over any app
+        if (isMenuKey(event)) {
+            if (event.getAction() == KeyEvent.ACTION_UP && !event.isCanceled()) {
+                Intent open = new Intent(this, SidebarActivity.class);
+                open.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_SINGLE_TOP);
+                startActivity(open);
+            }
+            return true;
+        }
         // A scancode entry is more specific than any keycode, so it goes first.
         String scanApp = appScancodes.get(event.getScanCode());
         if (scanApp != null) {
